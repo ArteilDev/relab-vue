@@ -1,0 +1,1383 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap')
+@font-face
+    font-family: 'Big-Orange-Cyrillic'
+    font-weight: 400
+    font-style: normal
+    src: url('fonts/Big-Orange-Cyrillic.ttf.woff') format("woff")
+    
+* 
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+html
+    scroll-behavior: smooth
+
+body
+    font-family: 'Inter', sans-serif
+    font-size: 14px
+    font-weight: 400
+    color: $color-black
+    background-color: #F4F4F4
+
+a
+    text-decoration: none
+    cursor: pointer
+
+li
+    list-style-position: inside
+
+button
+    font-family: 'Inter', sans-serif
+    font-size: 14px
+    background: none
+    border: none
+    cursor: pointer
+
+.section
+    margin-top: 35px
+    margin-bottom: 90px
+    @include respond (mobile)
+        margin-bottom: 36px
+    &-title
+        margin-bottom: 36px
+        font-family: 'Big-Orange-Cyrillic'
+        color: $color-black
+        font-size: 30px
+        @include respond (mobile)
+            margin-top: 24px
+            margin-bottom: 24px
+            font-size: 20px
+    &-catalog .toggle-switch
+        margin-bottom: 20px
+        width: 330px
+        @include respond (mobile)
+            margin-bottom: 8px
+        & a
+            color: $color-black
+            &.active
+                color: $color-white
+    &-feedback
+        & .btn.btn_black_outline
+            padding: 8px 18px
+            font-weight: 600
+    &.contacts
+        @include respond (mobile)
+            margin-bottom: 0
+    &.stores
+        @include respond (mobile)
+            padding-top: 8px
+
+.services
+    @include respond (mobile)
+        margin-bottom: 0
+
+.contacts-body
+    display: flex
+    align-items: center
+    gap: 24px
+    @include respond (mobile)
+        gap: 12px
+    @include respond (mobile-sm)
+        gap: 4px
+    & .btn_contacts
+        @include respond (mobile)
+            padding: 0 18px
+            font-size: 14px
+            font-weight: 500
+    & .btn_black_outline
+        @include respond (mobile-sm)
+            padding: 0 8px
+            font-size: 8px
+
+
+.yandex-map
+    margin-top: 38px
+    margin-bottom: 48px
+    font-size: 18px
+    @include respond (mobile)
+        margin-top: 24px
+        margin-bottom: 0
+    & iframe
+        margin-bottom: 32px
+        @include respond (mobile)
+            height: 220px
+    & svg
+        width: 35px
+        height: 35px
+        @include respond (tablet)
+            width: 24px
+            height: 24px
+    &__subtitle
+        display: flex
+        align-items: center
+        gap: 8px
+        &:last-child
+            margin-top: 4px
+        @include respond (tablet)
+            font-size: 14px
+        @include respond (mobile)
+            font-size: 12px
+        
+.section.stores
+    margin-bottom: 0
+.stores
+    padding-top: 71px
+    padding-bottom: 90px
+    margin-top: 0
+    background-color: #000
+    @include respond (mobile)
+        padding-top: 36px
+        padding-bottom: 45px
+    & h2
+        color: $color-white
+    &-categories
+        margin-bottom: 40px 
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        white-space: nowrap
+        gap: 16px
+        @include respond (laptop)
+            padding-bottom: 14px
+            overflow: scroll
+        @include respond (tablet)
+            gap: 8px
+        @include respond (mobile)
+            padding-bottom: 8px
+            margin-bottom: 0
+        &_main
+            display: flex
+            margin-bottom: 42px
+            @include respond (mobile)
+                margin-bottom: 0
+        & .btn
+            @include respond (tablet)
+                padding: 6px
+            @include respond (mobile)
+                padding: 0 12px
+                font-size: 14px
+        &__clothes
+            display: flex
+    &-sort
+        display: flex
+        align-items: center
+        margin-left: auto
+        gap: 20px
+        &_desc
+            @include respond (tablet)
+                display: none
+            & .btn_store-sort:hover
+                background: none
+                border-bottom: 1px solid #a8a8a8
+        &_mobile
+            display: none
+            margin-bottom: 16px
+            gap: 8px
+            @include respond (tablet)
+                display: flex
+    & button
+        @include respond (laptop)
+            font-size: 14px
+
+.checkout
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    gap: 59px
+    @include respond (laptop)
+        gap: 24px
+    @include respond (tablet)
+        grid-template-columns: repeat(2, 1fr)
+    &-step
+        display: flex
+        align-items: baseline
+        &_desc
+            @include respond (tablet)
+                display: none
+        &_mobile
+            display: none
+            @include respond (tablet)
+
+                display: flex
+        &__item
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            width: 50px
+            text-align: center
+        & svg
+            height: 20%
+        & p
+            font-size: 12px
+        & span
+            display: flex
+            align-items: center
+            justify-content: center
+            width: 40px
+            height: 40px
+            color: $color-border
+            font-size: 24px
+            border: 1px solid $color-border
+            border-radius: 100%
+            @include respond (laptop)
+                width: 35px
+                height: 35px
+                font-size: 20px
+            &.active
+                color: $color-red
+                border-color: $color-red
+        &_mobile
+            margin-top: 26px
+            width: 100%
+            justify-content: center
+            @include respond (mobile)
+                margin-top: 32px
+            & span
+                border: none
+                color: $color-white
+                background-color: #B1B1B1
+                &.active
+                    color: $color-white
+                    background-color: #373737
+        &-line
+            width: 100%
+            height: 1px
+            padding-bottom: 5px
+            &__item
+                width: 100%
+                height: 1px
+                background-color: #B1B1B1
+                &.active
+                    background-color: #373737
+    &-left
+        grid-column: 1 / 3
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-column-gap: 21px
+        @include respond (mobile)
+            grid-column-gap: 8px
+        &__title
+            margin-top: 27px
+            grid-column: 1 / 3
+            font-weight: 600
+        &.grid-1
+            grid-column: 1 / 2
+            width: 100%
+        &.grid-2
+            grid-column: 2 / 3
+            width: 100%
+        & .grid-2 .multiselect
+            margin-top: 20px
+        &-address
+            display: flex
+            margin-top: 30px
+            align-items: center
+            gap: 24px
+            @include respond (laptop)
+                grid-column: 1 / -1
+            &__item
+                position: relative  
+                padding: 16px 20px
+                border: 1px solid $color-black
+                width: 100%
+                height: 100%
+                cursor: pointer
+                @include respond (tablet)
+                    font-size: 14px
+                    border-radius: $border-radius
+                &:last-child
+                    color: $color-muted
+                    border-color: #d3d3d3
+                &:hover
+                    color: $color-black
+                    border: 1px solid $color-black
+                & p
+                    font-weight: 600
+                & span
+                    display: block
+                    margin-top: 8px
+                & svg
+                    position: absolute
+                    top: 5px
+                    right: 5px
+                &_empty
+                    display: flex
+                    flex-direction: column
+                    align-items: center
+                    justify-content: center
+                    text-align: center
+                    gap: 14px
+                    & svg
+                        position: relative
+                        top: 0
+                        right: 0
+        &-rest
+            padding: 18px 22px
+            margin-top: 30px
+            grid-column: 1 / 3
+            width: 100%
+            background-color: #ffffff
+            @include respond (laptop)
+                padding: 14px 18px
+            @include respond (tablet)
+                margin-top: 15px
+            & p
+                font-size: 16px
+                line-height: 24px
+                font-weight: 600
+                @include respond (laptop)
+                    font-size: 14px
+                @include respond (mobile)
+                    font-size: 12px
+                    line-height: 18px
+        &-cooktime
+            @include respond (tablet)
+                font-size: 14px
+                grid-column: 1 / 3
+            @include respond (mobile)
+                font-size: 12px
+            & svg
+                @include respond (mobile)
+                    width: 18px
+                    height: 18px
+        &-selects
+            margin-top: 20px
+            grid-column: 2 / 3
+            gap: 20px
+            @include respond (tablet)
+                grid-column: 1 / 3
+        &-later
+            @include respond (tablet)
+                grid-column: 2 / 3
+                grid-row: 6 / 7
+        &-pay
+            grid-column: 1 / 3
+            display: flex
+            gap: 20px
+            @include respond (mobile)
+                gap: 8px
+        &-comment
+            grid-column: 1 / 3
+    &-right
+        padding-left: 40px
+        margin-top: 48px
+        width: 100%
+        border-left: 1px solid $color-border
+        @include respond (laptop)
+            font-size: 14px
+        @include respond (tablet)
+            padding: 0 20px
+            grid-column: 1 / 3
+            border: none
+        @include respond (mobile)
+            margin-top: 0
+        &-order
+            display: flex
+            flex-direction: column
+            &__item
+                padding: 10px 0
+                margin: 10px 0
+                display: grid
+                grid-template-columns: repeat(2, 1fr)
+                width: 100%
+                color: $color-muted
+                line-height: 30px
+                border-bottom: 1px solid $color-border
+                @include respond (tablet)
+                    margin: 0
+                & .col
+                    &:last-child
+                        margin-left: auto
+                        color: $color-black
+                        font-weight: 600
+            & .btn
+                margin-top: 36px
+                @include respond (tablet)
+                    padding: 5px 0
+        &-total
+            @include respond (tablet)
+                margin-top: 10px
+        &__total-price
+            font-size: 22px
+            font-weight: 600
+            @include respond (laptop)
+                font-size: 18px
+        &__conditions
+            padding: 20px
+            margin-top: 40px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            color: $color-black
+            background-color: #ffffff
+            @include respond (tablet)
+                display: none
+        &__points
+            padding: 0 18px
+            margin-top: 21px
+            display: flex
+            flex-direction: column
+            background-color: #fff
+            @include respond (tablet)
+                background-color: #F9F9F9
+            &_header
+                padding: 14px 0
+                display: flex
+                justify-content: space-between
+                font-weight: 600
+                border-bottom: 1px solid $color-border
+                @include respond (laptop)
+                    flex-direction: column
+                @include respond (tablet)
+                    flex-direction: row
+                    border-color: $color-black
+            &_body
+                padding: 14px 0
+                color: $color-muted
+                @include respond (tablet)
+                    color: $color-black
+                & a
+                    color: $color-muted
+                    text-decoration: underline
+                    @include respond (tablet)
+                        color: $color-black
+                        font-weight: 600
+
+.catalog
+    &-sort-buttons
+        margin-bottom: 40px
+        display: flex
+        align-items: center
+        gap: 10px
+        width: 100%
+        @include respond (laptop)
+            margin-bottom: 30px
+        @include respond (tablet)
+            margin-bottom: 20px
+        @include respond (mobile)
+            display: none
+        & .btn
+            padding: 4px 20px
+            background-color: #DBDADA
+            @include respond (laptop)
+                font-size: 14px
+            &_active
+                color: $color-white !important
+                background-color: $color-red !important
+        & .btn.btn_white
+            padding: 4px 20px
+            background-color: $color-white
+            @include respond (laptop)
+                font-size: 14px
+        &__select
+            margin-left: auto
+            display: flex
+            align-items: center
+            gap: 16px
+            font-size: 16px
+            @include respond (tablet)
+                font-size: 14px
+
+.product
+    &-categories
+        padding-bottom: 15px
+        grid-column: 1 / -1
+        display: none
+        align-items: center
+        gap: 8px
+        width: 100%
+        overflow: scroll
+        @include respond (tablet)
+            display: flex
+        &::-webkit-scrollbar-thumb
+            background: none
+        & .btn
+            white-space: nowrap
+            font-size: 14px
+
+.footer
+    padding: 74px 0
+    color: $color-white
+    background-color: #1B1B1B
+    @include respond (tablet)
+        padding: 24px 0
+    @include respond (mobile)
+        margin-top: 24px
+    & .container
+        display: flex
+        align-items: center
+        padding-top: 24px
+        font-size: 12px
+        @include respond (laptop)
+            flex-direction: column
+        @include respond (mobile)
+                align-items: stretch
+        & .col
+            @include respond (tablet)
+                display: flex
+                align-items: center
+                justify-content: flex-end
+                gap: 25px
+
+    &-logo
+        width: 90px
+        @include respond (tablet)
+            margin-right: auto
+    &-desc
+        margin-top: 12px
+        @include respond (tablet)
+            margin-top: 0
+    &-links
+        margin-left: auto
+        display: grid
+        grid-template-columns: repeat(5, auto)
+        grid-gap: 75px
+        @include respond (laptop)
+            margin-top: 36px
+            grid-template-columns: repeat(3, auto)
+            margin: 36px auto 0 auto
+        @include respond (tablet)
+            display: none
+        & .col
+            display: flex
+            flex-direction: column
+            gap: 16px
+            & a
+                font-size: 16px
+                line-height: 150%
+                color: $color-white
+                @include respond (laptop)
+                    font-size: 14px
+                &:hover
+                    color: $color-red
+        & .btn_white_outline
+            &:hover
+                background: none !important
+                border-color: $color-red
+            &:hover path
+                fill: $color-red
+    &_mobile
+        display: none
+        color: $color-white
+        @include respond (tablet)
+            display: block
+    &-dropdowns
+        display: none !important
+        flex-direction: column
+        gap: 8px
+        padding-bottom: 24px
+        border-bottom: 1px solid #373737
+        @include respond (tablet)
+            display: flex !important
+        &.container
+            padding-top: 0
+            align-items: stretch
+        &__item
+            color: $color-white
+            padding: 10px 14px
+            border: 1px solid $color-white
+    
+.processed
+    display: grid
+    grid-template-columns: auto 1fr
+    gap: 26px
+    @include respond (tablet)
+        grid-template-columns: 1fr
+    &-title
+        margin-bottom: 36px
+        font-size: 16px
+    &-details
+        padding: 24px 40px
+        display: flex
+        flex-direction: column
+        gap: 8px
+        background-color: #FEFEFE
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+        &__item
+            font-size: 16px
+            line-height: 35px
+            border-bottom: 1px solid $color-border
+            @include respond (mobile)
+                font-size: 14px
+            & p
+                font-weight: 600
+            & span
+                color: $color-muted
+        & a
+            margin-top: 8px
+            color: $color-muted
+            text-decoration: underline
+    &-stocks
+        display: grid
+        grid-template-columns: 1fr auto
+        &__img
+            width: 100%
+            background: url("../img/processed-img.jpg") no-repeat center / cover
+        &__info
+            padding: 30px
+            display: flex
+            flex-direction: column
+            gap: 24px
+            font-size: 22px
+            color: $color-white
+            background-color: $color-red
+            @include respond (laptop)
+                font-size: 16px
+                padding: 15px
+            @include respond (mobile)
+                font-size: 12px
+                gap: 12px
+            & svg
+                @include respond (mobile)
+                    width: 32px
+
+.profile
+    margin-top: 40px
+    margin-bottom: 90px
+    @include respond (tablet)
+        margin-top: 24px
+    @include respond (mobile)
+        margin-top: 24px
+        margin-bottom: 48px
+    &-orders
+        display: flex
+        flex-direction: column
+        gap: 30px
+        &-item
+            padding: 0 30px
+            width: 100%
+            font-size: 16px
+            background-color: $color-white
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+            &__header
+                padding: 16px 0
+                display: flex
+                align-items: center
+                justify-content: space-between
+                border-bottom: 1px solid $color-border
+                & button
+                    color: #ec0105
+                    @include respond (tablet)
+                        display: none
+            &__body
+                display: grid
+                grid-template-columns: repeat(5, auto)
+                grid-column-gap: 48px
+                line-height: 20px
+                @include respond (tablet)
+                    grid-template-columns: repeat(2, 1fr)
+                    grid-column-gap: 0
+                &_address
+                    @include respond (tablet)
+                        grid-column: 1 / 3
+                & div
+                    padding: 24px 0
+                    display: flex
+                    flex-direction: column
+                    gap: 22px
+                    @include respond (tablet)
+                        padding: 14px 0
+                        gap: 8px
+                        border-bottom: 1px solid $color-border
+                    &:nth-child(5)
+                        margin-left: auto
+                        @include respond (tablet)
+                            margin-left: 0
+                    &:nth-child(5), &:nth-child(4)
+                        @include respond (tablet)
+                            border: none
+                    &:last-child
+                        display: none
+                        @include respond (tablet)
+                            grid-column: 1 / 3
+                            display: flex
+                        & .btn
+                            padding: 4px 0
+                    & button
+                        text-align: start
+                        font-weight: 600
+                        font-size: 16px
+            & p
+                font-weight: 700
+            & span
+                color: $color-muted
+    &-bonuses
+        display: flex
+        flex-direction: column
+        background: $color-white
+        box-shadow: 0px 0px 20px 0px #0000000D
+        &-header
+            padding: 20px 28px
+            display: flex
+            align-items: center
+            gap: 10px
+            font-weight: 700
+            width: 100%
+            @include respond (tablet)
+                padding: 15px
+            & span
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 27px
+                height: 27px
+                border: 1px solid $color-black
+                border-radius: 1000px
+            &__dropdown
+                display: none
+                margin-left: auto
+                @include respond (tablet)
+                    display: inline
+        &-body
+            padding: 24px 30px 40px 30px
+            display: grid
+            grid-template-columns: repeat(4, 1fr)
+            font-weight: 700
+            border-top: 1px solid $color-border
+            @include respond (tablet)
+                display: none
+                padding: 15px 15px 24px 15px
+                grid-template-columns: repeat(2, 1fr)
+                grid-row-gap: 24px
+            &.active
+                display: grid
+            &-item
+                display: flex
+                flex-direction: column
+                gap: 12px
+                & span
+                    font-weight: 400
+                    color: $color-muted
+    &-profile
+        padding: 27px 41px
+        display: grid
+        grid-template-columns: 1fr auto
+        grid-column-gap: 30px
+        grid-row-gap: 30px
+        background-color: $color-white
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+        @include respond (tablet)
+            padding: 0
+            display: flex
+            flex-direction: column
+            background: none
+            box-shadow: none
+        &-inputs
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-column-gap: 30px
+            grid-row-gap: 30px
+        &-abonements
+            padding: 14px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            gap: 12px
+            font-weight: 700
+            background: #F4F4F4
+            box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+            border-radius: $border-radius
+            @include respond (tablet)
+                display: none
+            &__list
+                display: flex
+                flex-direction: column
+                gap: 8px
+                line-height: 20px
+                font-weight: 400
+                color: #7C7F7E
+            &__button
+                font-size: 14
+                font-weight: 400
+            &_mobile
+                padding: 15px
+                display: none
+                font-weight: 700
+                background-color: $color-white
+                border-radius: $border-radius
+                & .profile-profile-abonements__list
+                    font-size: 14px
+                &-header
+                    display: flex
+                    align-items: center
+                    justify-content: space-between
+                &-body
+                    display: none
+                    flex-direction: column
+                    gap: 12px
+                    &.active
+                        display: flex
+                @include respond (tablet)
+                    grid-column: 1 / 3
+                    display: flex
+                    flex-direction: column
+                    gap: 12px
+        &__save_desc
+            @include respond (tablet)
+                display: none
+        &__save_mobile
+            display: none !important
+            @include respond (tablet)
+                grid-column: 1 / 3
+                grid-row: 6 / 7
+                display: flex !important
+        &__save_success_desc
+            @include respond (tablet)
+                display: none
+        &__save_success_mobile
+            display: none !important
+            background-color: $color-success !important
+            @include respond (tablet)
+                grid-column: 1 / 3
+                grid-row: 6 / 7
+                display: flex !important
+        &__address
+            grid-column: 1 / 3
+            grid-row: 3 / 4
+            @include respond (tablet)
+                grid-row: 4 / 5
+            &-list
+                display: grid
+                grid-template-columns: repeat(4, 1fr)
+                @include respond (mobile)
+                    grid-template-columns: repeat(3, 1fr)
+            &__item
+                padding: 23px 0 12px 0
+                margin-top: 19px
+                display: flex
+                flex-direction: column
+                align-items: center
+                gap: 15px
+                width: 100%
+                transition: $trans
+                border: 1px solid $color-border
+                border-radius: $border-radius
+                cursor: pointer
+                @include respond (tablet)
+                    gap: 0
+                @include respond (mobile)
+                    padding: 14px 0 8px 0
+                &:hover
+                    border-color: $color-black
+                &:hover p
+                    color: $color-black
+                &:hover path
+                    stroke: $color-black
+                & svg
+                    @include respond (mobile)
+                        width: 24px
+                & p
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 35px
+                    color: #7C7F7E
+                    @include respond (tablet)
+                        font-size: 14px
+                    @include respond (mobile)
+                        line-height: 20px
+        &__card
+            grid-column: 1 / 3
+            grid-row: 4 / 5
+            @include respond (tablet)
+                grid-column: 1 / 3
+                grid-row: 5 / 6
+            &-list
+                display: grid
+                grid-template-columns: repeat(4, 1fr)
+                @include respond (mobile)
+                    grid-template-columns: repeat(3, 1fr)
+            &__item
+                padding: 12px
+                margin-top: 19px
+                display: flex
+                flex-direction: column
+                align-items: center
+                width: 100%
+                border: 1px solid $color-border
+                border-radius: $border-radius
+                cursor: pointer
+                &:hover
+                    border-color: $color-black
+                & svg
+                    width: 54px
+                    @include respond (mobile)
+                        width: 36px
+                        height: 36px
+                & p
+                    font-size: 16px
+                    font-weight: 600
+                    line-height: 35px
+                    @include respond (tablet)
+                        font-size: 14px
+                    @include respond (mobile)
+                        line-height: 20px
+        &__exit
+            font-size: 16px
+            line-height: 24px
+            cursor: pointer
+            &:hover
+                color: $color-red
+            &_desc
+                grid-column: 2 / 3
+                @include respond (tablet)
+                    display: none
+            &_mobile
+                display: none
+                @include respond (tablet)
+                    display: flex
+                    width: 100%
+                    justify-content: center
+.reserve
+    padding: 35px 40px
+    display: flex
+    flex-direction: column
+    // display: grid
+    // grid-template-columns: 1fr 1fr 400px
+    grid-column-gap: 30px
+    background-color: $color-white
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+    // @include respond (laptop)
+    //     grid-column-gap: 14px
+    // @include respond (tablet)
+    //     grid-template-columns: repeat(2, 1fr)
+    @include respond (mobile)
+        padding: 20px 16px
+    &-available
+        // grid-column: 3 / 4
+        // grid-row: 1 / 7
+        display: flex
+        flex-direction: column
+        gap: 27px
+        @include respond (tablet)
+            // grid-column: 1 / 3
+            // grid-row: 5 / 6
+            margin-top: 27px
+            width: 100%
+        & p
+            font-weight: 600
+        &-progressbar
+            width: 100%
+            height: 10px
+            background-color: #D9D9D9
+            border-radius: $border-radius
+            &__item
+                display: block
+                width: 0%
+                height: 100%
+                background-color: $color-red
+                border-radius: $border-radius
+    &-label
+        margin-top: 27px
+        grid-column: 1 / 3
+        font-weight: 600
+        @include respond (tablet)
+            grid-column: 1 / 3
+    &-rests
+        & .toggle-switch
+            grid-template-columns: repeat(4, auto)
+            width: 100%
+            background: #D9D9D9
+            &__button
+                color: $color-black
+                @include respond (mobile)
+                    font-size: 10px
+                @include respond (mobile-sm)
+                    font-size: 8px
+    &-iframe
+        margin-top: 14px
+        border-radius: 10px
+        @include respond (tablet)
+            border-radius: 5px
+    &-text
+        padding: 24px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        gap: 8px
+        height: 700px
+        font-size: 18px
+        & a
+            color: $color-red
+            font-size: 20px
+    &-date
+        grid-column: 1 / 2
+        @include respond (tablet)
+            grid-column: 1 / 2
+            grid-row: 3 / 4
+    &-time
+        @include respond (tablet)
+            grid-column: 2 / 3
+            grid-row: 3 / 4
+    &-tables
+        margin-bottom: 27px
+        grid-column: 1 / 3
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-column-gap: 20px
+        @include respond (laptop)
+            grid-column-gap: 8px
+        @include respond (tablet)
+            grid-column: 1 / 3
+        &__item
+            & label
+                display: flex
+                justify-content: center
+                border-radius: $border-radius
+                @include respond (mobile)
+                    padding: 8px !important
+                    font-weight: 400 !important
+                    text-align: center
+            &:last-child
+                grid-column: 1 / 3
+            & .dot
+                display: none
+    &-name
+        grid-column: 1 / 2
+    &-surname
+        grid-column: 2 / 3
+    &-phone
+        margin-top: 27px
+        grid-column: 1 / 3
+    &-comment   
+        margin-top: 27px
+        grid-column: 1 / 3
+    &-checkbox
+        margin-top: 22px
+        grid-column: 1 / 3
+        display: flex
+        align-items: center
+        gap: 8px
+        & a
+            color: $color-black
+            text-decoration: underline
+    & .btn
+        padding: 4px 0
+        margin-top: 27px
+        grid-column: 1 / 3
+        width: 30%
+        @include respond (tablet)
+            width: 100%
+    &-error
+        margin-top: 12px
+        grid-column: 1 / 3
+        grid-row: 4 / 5
+        color: $color-red
+
+.qr-pay
+    display: grid
+    grid-template-columns: repeat(2, 1fr)
+    grid-column-gap: 30px
+    @include respond (tablet)
+        grid-template-columns: 1fr
+    &-left
+        padding: 64px 55px
+        display: grid
+        grid-template-columns: 1fr auto
+        gap: 18px
+        background-color: $color-white
+        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.05)
+        @include respond (mobile)
+            padding: 24px 18px
+            grid-template-columns: 1fr
+        &-success
+            grid-column: 1 / 3
+            font-size: 18px
+            font-weight: 700
+            @include respond (mobile)
+                grid-column: 1 / 2
+        & label
+            font-weight: 700
+        &-order
+            grid-column: 1 / 3
+            @include respond (mobile)
+                grid-column: 1 / 2
+            &__body
+                &__item
+                    padding-top: 11px
+                    padding-bottom: 20px
+                    display: flex
+                    justify-content: space-between
+                    font-size: 18px
+                    line-height: 30px
+                    border-bottom: 1px solid $color-border
+                    @include respond (mobile)
+                        padding-bottom: 8px
+                        font-size: 16px
+                    &:last-child
+                        margin-top: 20px
+                        border: none
+                    & span
+                        color: $color-muted
+                    & p
+                        font-weight: 700
+                    &_total
+                        display: flex
+                        flex-direction: column
+                        gap: 16px
+                        & .d-flex
+                            justify-content: space-between
+                            width: 100%
+            & .btn
+                padding: 8px 0
+                margin-top: 16px
+                width: 100%
+    &-right
+        background: url("../img/qr-pay.jpg") no-repeat center / cover
+        @include respond (tablet)
+            display: none
+
+.vacation
+    &-header 
+        position: relative
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        @include respond (laptop)
+            grid-template-columns: 1fr
+        & .main-nav-link
+            margin-top: 0
+        &-left
+            display: flex
+            flex-direction: column  
+            &_desc
+                padding: 46px 62px 90px 74px
+                @include respond (tablet)
+                    display: none
+            &_mobile
+                padding-top: 46px
+                padding-bottom: 42px
+                display: none
+                @include respond (tablet)
+                    display: flex
+            &__title
+                margin-top: 64px
+                font-family: 'Big-Orange-Cyrillic'
+                font-size: 30px
+                @include respond (tablet)
+                    font-size: 26px
+                @include respond (mobile)
+                    font-size: 18px
+                & span
+                    color: $color-red
+            &__info
+                margin-top: 34px
+                font-size: 18px
+                line-height: 30px
+                @include respond (tablet)
+                    font-size: 16px
+                @include respond (mobile)
+                    margin-top: 16px
+                    font-size: 14px
+                    line-height: 24px
+            &-row
+                margin-top: 46px
+                display: flex
+                align-items: center
+                gap: 20px
+                @include respond (mobile)
+                    margin-top: 18px
+                    flex-direction: column
+                    align-items: flex-start
+                    gap: 8px
+            &__link
+                display: flex
+                align-items: center
+                gap: 8px
+                color: $color-red
+                font-size: 16px
+                @include respond (mobile)
+                    margin-top: 18px
+                    font-size: 14px
+        &-right
+            @include respond (laptop)
+                height: 500px
+            @include respond (mobile)
+                height: 280px
+                margin-bottom: 14px
+            &__img
+                width: 100%
+                height: 100%
+                background-repeat: no-repeat
+                background-position: center
+                background-size: cover
+    &-section-header
+        margin-top: 16px
+        margin-bottom: 36px
+        display: flex
+        align-items: center
+        justify-content: space-between
+        & h2
+            margin-top: 0
+            margin-bottom: 0
+        & .btn
+            @include respond (mobile)
+                font-size: 12px
+                line-height: 24px
+
+    &-body
+        padding: 72px 0 90px 0
+        background-color: rgba(217, 217, 217, 1)
+        @include respond (tablet)
+            background: none
+        @include respond (mobile)
+            padding: 0 0 32px 0
+
+.favorites
+    &-empty
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        gap: 24px
+        font-size: 20px
+        height: 50vh
+
+.cart-wrapper
+    display: grid
+    grid-template-columns: 1fr auto
+    grid-gap: 20px
+    @include respond (tablet)
+        grid-template-columns: 1fr
+.cart
+    &-result
+        display: flex
+        flex-direction: column
+        width: 400px
+        max-height: 380px
+        @include respond (laptop)
+            width: 250px
+        @include respond (tablet)
+            width: 100%
+        &-points
+            padding-left: 22px
+            padding-right: 12px
+            display: flex
+            align-items: center
+            justify-content: space-between
+            font-size: 16px
+            font-weight: 600
+            height: 50px
+            background: #E4E4E4
+            border-radius: 5px
+            @include respond (mobile)
+                padding-left: 12px
+                font-size: 12px
+                height: 40px
+            & span
+                display: flex
+                align-items: center
+                justify-content: center
+                width: 20px
+                height: 20px
+                background: $color-red
+                border-radius: 1000px
+        &-price
+            margin-top: auto
+            display: flex
+            justify-content: space-between
+            font-size: 24px
+            @include respond (tablet)
+                margin-top: 20px
+            @include respond (mobile)
+                font-size: 18px
+        & .btn
+            margin-top: 24px
+            height: 60px
+            @include respond (mobile)
+                font-size: 14px
+                height: 45px
+    &-list
+        display: flex
+        flex-direction: column
+        gap: 20px
+    &-product
+        display: flex
+        width: 100%
+        height: 180px
+        background: $color-white
+        @include respond (mobile)
+            height: 130px
+        &__img
+            width: 180px
+            height: 180px
+            background-size: cover
+            background-position: center
+            background-repeat: no-repeat
+            @include respond (mobile)
+                width: 130px
+                height: 130px
+        &-info
+            padding: 26px 20px 18px 22px
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            width: 100%
+            @include respond (mobile)
+                padding: 12px
+            &__title
+                font-weight: 600
+                @include respond (mobile)
+                    font-size: 12px
+            &-footer
+                display: flex
+                align-items: center
+                gap: 14px
+                @include respond (mobile)
+                    gap: 4px
+                &__price
+                    font-weight: 600
+                    @include respond (mobile)
+                        font-size: 12px
+                &__size
+                    margin-left: auto
+                    font-weight: 400
+                    color: #7C7F7E
+                &-count
+                    padding-left: 12px
+                    display: flex
+                    align-items: center
+                    gap: 12px
+                    height: 30px
+                    background: #F7F7F7
+                    border-radius: 1000px
+                    &__btn
+                        display: flex
+                        align-items: center
+                        height: 30px
+                        width: 90px
+                        color: $color-white
+                        background: $color-red
+                        border-radius: 1000px
+                        @include respond (mobile)
+                            width: 70px
+                        & span
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            line-height: 30px
+                            font-size: 20px
+                            width: 100%
+                            cursor: pointer
+                            &:first-child
+                                border-top-left-radius: 1000px
+                                border-bottom-left-radius: 1000px
+                            &:last-child
+                                border-top-right-radius: 1000px
+                                border-bottom-right-radius: 1000px
+                            &:hover
+                                background: #a71416
+                            &.line
+                                width: 1px
+                                height: 16px
+                                background: $color-white
+                                cursor: default
+    &-empty
+        height: calc( 100vh - 638px )
+        @include respond (tablet)
+            height: calc( 100vh - 568px )
+        @include respond (mobile)
+            height: calc( 100vh - 488px )
+
+.pagination
+    display: flex
+    align-items: center

@@ -1,0 +1,125 @@
+.rest
+    &-header
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        @include respond (tablet)
+            grid-template-columns: 1fr
+        & .main-nav-link
+            margin-top: 0
+        &-left
+            display: flex
+            flex-direction: column
+            &_desc
+                padding: 46px 62px 90px 74px
+                @include respond (tablet)
+                    display: none
+            &_mobile
+                padding-top: 46px
+                padding-bottom: 42px
+                display: none
+                @include respond (tablet)
+                    display: flex
+            &__title
+                margin-top: 64px
+                font-family: 'Big-Orange-Cyrillic'
+                font-size: 30px
+                @include respond (tablet)
+                    font-size: 26px
+                @include respond (mobile)
+                    font-size: 18px
+                & span
+                    color: $color-red
+            &__info
+                margin-top: 34px
+                font-size: 18px
+                line-height: 30px
+                @include respond (tablet)
+                    font-size: 16px
+                @include respond (mobile)
+                    margin-top: 16px
+                    font-size: 14px
+                    line-height: 24px
+            &__link
+                margin-top: 46px
+                display: flex
+                align-items: center
+                gap: 8px
+                color: $color-red
+                font-size: 16px
+                @include respond (mobile)
+                    margin-top: 18px
+                    font-size: 14px
+        &-right
+            @include respond (tablet)
+                margin-bottom: 42px
+                height: 500px
+            @include respond (mobile)
+                height: 280px
+                margin-bottom: 14px
+            &-swiper
+                position: relative
+                width: 100%
+                height: 100%
+                & .swiper
+                    padding: 0
+                    position: absolute
+                    width: 100%
+                    height: 100%
+                &__img
+                    width: 100%
+                    height: 100%
+                    background-repeat: no-repeat
+                    background-position: center
+                    background-size: cover
+                & .swiper-button-prev, .swiper-button-next
+                    top: 50%
+                    color: $color-white
+                    height: 24px
+                    width: 24px
+                    &::after
+                        font-size: 24px   
+                & .swiper-pagination
+                    bottom: 25px
+                    &-bullet
+                        border: none
+                        background-color: $color-white
+                        scale: (0.5)
+                        &-active
+                            background-color: $color-red
+                            scale: (1)
+        &-bottom
+            background-color: $color-red
+            &-list
+                padding: 30px 0
+                display: grid
+                grid-template-columns: repeat(5, 1fr)
+                align-items: center
+                justify-content: space-between
+                grid-column-gap: 48px
+                grid-row-gap: 24px
+                @include respond (laptop)
+                    padding: 16px
+                    grid-template-columns: repeat(3, 1fr)
+                    grid-column-gap: 8px
+                    grid-row-gap: 16px
+            &__item
+                display: flex
+                align-items: center
+                gap: 8px
+                color: $color-white
+                font-weight: 500
+                @include respond (mobile)
+                    font-size: 8px
+                &__img
+                    padding: 6px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+                    background-color: $color-white
+                    border-radius: 100%
+                    @include respond (mobile)
+                        width: 24px
+                        height: 24px
+                    & img
+                        @include respond (mobile)
+                            width: 150%
